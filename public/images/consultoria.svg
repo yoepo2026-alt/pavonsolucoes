@@ -1,0 +1,32 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Person -->
+  <circle cx="200" cy="80" r="20" fill="url(#grad3)"/>
+  <path d="M 200 100 L 200 150 M 180 120 L 220 120 M 200 150 L 185 180 M 200 150 L 215 180" stroke="url(#grad3)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Thought bubbles with symbols -->
+  <g>
+    <!-- Main bubble -->
+    <circle cx="280" cy="100" r="35" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <polygon points="245,120 250,135 260,125" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+    
+    <!-- Icons inside: gear, chart, shield -->
+    <g opacity="0.8">
+      <!-- Gear -->
+      <circle cx="270" cy="85" r="5" fill="none" stroke="#06b6d4" stroke-width="1"/>
+      <line x1="270" y1="80" x2="270" y2="75" stroke="#06b6d4" stroke-width="1"/>
+      <line x1="270" y1="95" x2="270" y2="100" stroke="#06b6d4" stroke-width="1"/>
+      
+      <!-- Chart -->
+      <line x1="280" y1="105" x2="280" y2="115" stroke="#06b6d4" stroke-width="1.5"/>
+      <line x1="285" y1="100" x2="285" y2="115" stroke="#06b6d4" stroke-width="1.5"/>
+      <line x1="290" y1="95" x2="290" y2="115" stroke="#06b6d4" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
