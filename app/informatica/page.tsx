@@ -87,46 +87,58 @@ const informaticaServices = [
 
 const informaticaPricing = [
   {
-    name: 'Startup',
+    name: 'Formatação e Reinstalação do Sistema',
     subtitle: 'Ideal para pequenas empresas',
     price: 'R$ 80',
     priceLabel: '/equipe',
     features: [
-      'Suporte técnico básico',
-      'Manutenção 1x por mês',
-      'Backup mensal',
-      'Até 5 computadores'
+      'Backup básico de dados (se aplicável)',
+      'Formatação completa do sistema',
+      'Instalação do Windows e drivers',
+      'Configuração de software essencial',
+      'Teste de desempenho pós-instalação'
     ],
-    buttonText: 'Solicitar Informações'
+    buttonText: 'Solicitar Informações',
+   isPrimary: true
   },
   {
-    name: 'Profissional',
+    name: 'Instalação de Programas Essenciais',
     subtitle: 'Para empresas em crescimento',
-    price: 'R$ 999',
-    priceLabel: '/mês',
+    price: 'R$ 120',
+    priceLabel: '/equipe',
     features: [
-      'Suporte técnico prioritário',
-      'Manutenção semanal',
-      'Backup diário',
-      'Até 20 computadores',
-      'Monitoramento 24/7'
-    ],
+      'Pacote Office (ou similar)',
+      'Navegadores (Chrome, Edge)',
+      'eitores PDF, compactadores, etc.',
+     ],
     badge: 'MAIS POPULAR',
     buttonText: 'Começar Agora',
-    isPrimary: true
-  },
+   },
   {
-    name: 'Enterprise',
+    name: 'Otimização e Limpeza do Sistema',
     subtitle: 'Para grandes operações',
-    price: 'Customizado',
+    price: 'R$ 70',
+    priceLabel: '/equipe',
     features: [
-      'Solução 100% customizada',
-      'Suporte dedicado 24/7',
-      'Infrastructure management',
-      'Consultoria estratégica'
+      'Remoção de vírus e arquivos inúteis',
+      'Ajuste de inicialização',
+      'Melhoria de desempenho geral',
+    ],
+    buttonText: 'Fale com um Especialista'
+  },
+    {
+    name: 'Configuração de Segurança',
+    subtitle: 'Para grandes operações',
+    price: 'R$ 60',
+    priceLabel: '/equipe',
+     features: [
+      'Instalação de antivírus',
+      'Atualizações do sistema',
+      'Configuração básica de proteção',
     ],
     buttonText: 'Fale com um Especialista'
   }
+
 ];
 
 export default function InformaticaPage() {
