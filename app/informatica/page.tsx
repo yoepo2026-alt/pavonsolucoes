@@ -89,8 +89,8 @@ const informaticaPricing = [
   {
     name: 'Startup',
     subtitle: 'Ideal para pequenas empresas',
-    price: 'R$ 499',
-    priceLabel: '/mês',
+    price: 'R$ 80',
+    priceLabel: '/equipe',
     features: [
       'Suporte técnico básico',
       'Manutenção 1x por mês',
