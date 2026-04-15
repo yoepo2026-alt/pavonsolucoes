@@ -99,6 +99,7 @@ const informaticaPricing = [
       'Teste de desempenho pós-instalação'
     ],
     buttonText: 'Solicitar Informações',
+    badge: 'MAIS POPULAR',
    isPrimary: true
   },
   {
@@ -111,7 +112,6 @@ const informaticaPricing = [
       'Navegadores (Chrome, Edge)',
       'eitores PDF, compactadores, etc.',
      ],
-    badge: 'MAIS POPULAR',
     buttonText: 'Começar Agora',
    },
   {
