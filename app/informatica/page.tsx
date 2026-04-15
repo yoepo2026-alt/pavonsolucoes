@@ -88,7 +88,7 @@ const informaticaServices = [
 const informaticaPricing = [
   {
     name: 'Formatação e Reinstalação do Sistema',
-    subtitle: 'Ideal para pequenas empresas',
+    subtitle: 'Resolve erros críticos e lentidão extrema',
     price: 'R$ 80',
     priceLabel: '/equipe',
     features: [
@@ -103,7 +103,7 @@ const informaticaPricing = [
   },
   {
     name: 'Instalação de Programas Essenciais',
-    subtitle: 'Para empresas em crescimento',
+    subtitle: 'PC pronto para uso imediato',
     price: 'R$ 120',
     priceLabel: '/equipe',
     features: [
@@ -116,7 +116,7 @@ const informaticaPricing = [
    },
   {
     name: 'Otimização e Limpeza do Sistema',
-    subtitle: 'Para grandes operações',
+    subtitle: 'Mais velocidade e melhor desempenho',
     price: 'R$ 70',
     priceLabel: '/equipe',
     features: [
@@ -128,7 +128,7 @@ const informaticaPricing = [
   },
     {
     name: 'Configuração de Segurança',
-    subtitle: 'Para grandes operações',
+    subtitle: 'Proteção contra vírus e invasões',
     price: 'R$ 60',
     priceLabel: '/equipe',
      features: [
