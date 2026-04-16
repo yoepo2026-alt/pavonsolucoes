@@ -1,7 +1,7 @@
 // ALTERNATIVA: Use este arquivo se preferir usar Gmail + Nodemailer ao invés de Resend
 // Renomeie para "route.ts" e comentarie o arquivo anterior
 
-import { NextRequest, NextResponse } from 'next/server';
+/* import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
@@ -98,3 +98,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+ */
