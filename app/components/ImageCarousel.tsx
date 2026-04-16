@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -53,6 +53,8 @@ export default function ImageCarousel({
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(autoPlay);
+  const touchStartRef = useRef<number>(0);
+  const touchEndRef = useRef<number>(0);
 
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -79,13 +81,41 @@ export default function ImageCarousel({
     setIsAutoPlay(false);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndRef.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50;
+    const difference = touchStartRef.current - touchEndRef.current;
+
+    if (Math.abs(difference) > swipeThreshold) {
+      if (difference > 0) {
+        // Swipe para esquerda = próximo
+        goToNext();
+      } else {
+        // Swipe para direita = anterior
+        goToPrevious();
+      }
+    }
+  };
+
   return (
     <section className={`py-12 md:py-16 ${darkBG ? 'bg-gradient-to-b from-slate-800 to-slate-900 dark:from-slate-800 dark:to-slate-900' : 'bg-white dark:bg-slate-800'} transition-colors`}>
       <div className="container mx-auto px-4 md:px-6">
         {/* Carrossel Container */}
         <div className="relative group">
           {/* Imagem Principal */}
-          <div className="relative w-full h-96 md:h-96 lg:h-96 rounded-lg overflow-hidden shadow-lg bg-slate-200 dark:bg-slate-700">
+          <div 
+            className="relative w-full h-96 md:h-96 lg:h-96 rounded-lg overflow-hidden shadow-lg bg-slate-200 dark:bg-slate-700"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             {images.map((image, index) => (
               <div
                 key={index}
@@ -112,21 +142,26 @@ export default function ImageCarousel({
             ))}
           </div>
 
-          {/* Setas de Navegação */}
+          {/* Setas de Navegação - Apenas em Desktop/Hover */}
           <button
             onClick={goToPrevious}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/30 hover:bg-cyan-500/50 text-white p-2 md:p-3 rounded-full transition-colors opacity-0 group-hover:opacity-100"
+            className="hidden md:block absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/30 hover:bg-cyan-500/50 text-white p-2 md:p-3 rounded-full transition-colors opacity-0 group-hover:opacity-100"
             aria-label="Imagem anterior"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/30 hover:bg-cyan-500/50 text-white p-2 md:p-3 rounded-full transition-colors opacity-0 group-hover:opacity-100"
+            className="hidden md:block absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-cyan-500/30 hover:bg-cyan-500/50 text-white p-2 md:p-3 rounded-full transition-colors opacity-0 group-hover:opacity-100"
             aria-label="Próxima imagem"
           >
             <ChevronRight size={24} />
           </button>
+
+          {/* Indicador de Swipe no Mobile */}
+          <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 bg-white/30 text-white px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+            ← Deslize →
+          </div>
 
           {/* Indicadores (Dots) */}
           <div className="flex justify-center gap-2 mt-6">
