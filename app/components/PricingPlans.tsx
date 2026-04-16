@@ -22,6 +22,8 @@ interface PricingPlansProps {
 export default function PricingPlans({ title, plans, darkBG = false }: PricingPlansProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<number>(0);
+  const touchEndRef = useRef<number>(0);
   const isCarousel = plans.length > 3;
 
   const scrollToSlide = (index: number) => {
@@ -46,6 +48,30 @@ export default function PricingPlans({ title, plans, darkBG = false }: PricingPl
     scrollToSlide(newIndex);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndRef.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50; // Mínimo de pixels para contar como swipe
+    const difference = touchStartRef.current - touchEndRef.current;
+
+    if (Math.abs(difference) > swipeThreshold) {
+      if (difference > 0) {
+        // Swipe para esquerda = próximo
+        handleNext();
+      } else {
+        // Swipe para direita = anterior
+        handlePrevious();
+      }
+    }
+  };
+
   return (
     <section className={`py-20 px-4 sm:px-6 lg:px-8 ${darkBG ? 'bg-slate-800/50' : ''}`}>
       <div className="max-w-7xl mx-auto">
@@ -54,8 +80,10 @@ export default function PricingPlans({ title, plans, darkBG = false }: PricingPl
         <div className={isCarousel ? 'relative' : ''}>
           <div
             ref={scrollContainerRef}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             className={isCarousel
-              ? 'flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4'
+              ? 'flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 touch-pan-y'
               : 'grid md:grid-cols-3 gap-8'
             }
             style={isCarousel ? { scrollBehavior: 'smooth' } : undefined}
