@@ -150,7 +150,7 @@ export default function PricingPlans({ title, plans, darkBG = false }: PricingPl
           {isCarousel && (
             <div className="mt-12 flex flex-col items-center gap-6">
               {/* Botões de navegação */}
-              <div className="flex gap-4">
+{/*               <div className="flex gap-4">
                 <button
                   onClick={handlePrevious}
                   className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition transform hover:scale-105"
@@ -164,7 +164,7 @@ export default function PricingPlans({ title, plans, darkBG = false }: PricingPl
                   Próximo →
                 </button>
               </div>
-
+ */}
               {/* Indicadores de slide */}
               <div className="flex gap-2">
                 {plans.map((_, index) => (
