@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { nome, email, telefone, empresa, servico, descricao, orcamento, data, recaptchaToken } = body;
+    const { nome, email, telefone, empresa, servico, descricao, orcamento, data } = body;
 
     // Validação básica
     if (!nome || !email || !telefone || !servico || !descricao) {
@@ -11,34 +11,6 @@ export async function POST(request: NextRequest) {
         { error: 'Campos obrigatórios faltando' },
         { status: 400 }
       );
-    }
-
-    // Validar reCAPTCHA
-    if (recaptchaToken) {
-      const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY;
-      if (recaptchaSecretKey) {
-        try {
-          const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `secret=${recaptchaSecretKey}&response=${recaptchaToken}`,
-          });
-
-          const recaptchaData = await recaptchaResponse.json();
-
-          if (!recaptchaData.success || recaptchaData.score < 0.5) {
-            return NextResponse.json(
-              { error: 'Validação de segurança falhou. Tente novamente.' },
-              { status: 400 }
-            );
-          }
-        } catch (recaptchaError) {
-          console.error('Erro ao validar reCAPTCHA:', recaptchaError);
-          // Continua mesmo se falhar (fallback)
-        }
-      }
     }
 
     const businessEmail = process.env.NEXT_PUBLIC_BUSINESS_EMAIL;

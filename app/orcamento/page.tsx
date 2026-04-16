@@ -1,17 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Script from 'next/script';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
-
-declare global {
-  interface Window {
-    grecaptcha: any;
-  }
-}
 
 export default function OrcamentoPage() {
   const [formData, setFormData] = useState({
@@ -29,15 +22,6 @@ export default function OrcamentoPage() {
   const [enviado, setEnviado] = useState(false);
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState('');
-  const [recaptchaReady, setRecaptchaReady] = useState(false);
-
-  useEffect(() => {
-    // Marcar quando reCAPTCHA estiver pronto
-    const timer = setTimeout(() => {
-      setRecaptchaReady(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -70,26 +54,12 @@ export default function OrcamentoPage() {
     setErro('');
 
     try {
-      // Obter token do reCAPTCHA
-      let recaptchaToken = '';
-      if (window.grecaptcha && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-        try {
-          recaptchaToken = await window.grecaptcha.execute(
-            process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-            { action: 'submit' }
-          );
-        } catch (recaptchaError) {
-          console.warn('reCAPTCHA não disponível, continuando sem proteção:', recaptchaError);
-          // Continua sem reCAPTCHA - a proteção é opcional
-        }
-      }
-
       const response = await fetch('/api/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
@@ -123,13 +93,6 @@ export default function OrcamentoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* Script do reCAPTCHA */}
-      <Script 
-        src="https://www.google.com/recaptcha/api.js" 
-        async 
-        defer 
-      />
-
       {/* Header/Navegação */}
       <Header />
 
@@ -337,7 +300,7 @@ export default function OrcamentoPage() {
               </div>
 
               {/* Botão Enviar */}
-              <div className="pt-6 space-y-4">
+              <div className="pt-6">
                 <button
                   type="submit"
                   disabled={!isFormValid() || carregando}
@@ -352,19 +315,10 @@ export default function OrcamentoPage() {
                 
                 {/* Mensagem de ajuda */}
                 {!isFormValid() && (
-                  <p className="text-center text-sm text-amber-400">
+                  <p className="text-center text-sm text-amber-400 mt-3">
                     Preencha todos os campos obrigatórios para enviar
                   </p>
                 )}
-
-                {/* Badge do reCAPTCHA */}
-                <div className="flex justify-center text-xs text-gray-500">
-                  <span>Este site é protegido por reCAPTCHA e pela </span>
-                  <a href="https://policies.google.com/privacy" className="text-cyan-400 hover:underline">Política de Privacidade</a>
-                  <span> e </span>
-                  <a href="https://policies.google.com/terms" className="text-cyan-400 hover:underline">Termos de Serviço</a>
-                  <span> do Google</span>
-                </div>
               </div>
 
               <p className="text-gray-400 text-sm text-center">
