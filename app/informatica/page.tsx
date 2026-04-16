@@ -28,7 +28,7 @@ const informaticaServices = [
     gradient: 'from-cyan-600/20 to-cyan-800/20',
     border: 'border-cyan-500/30',
     bgGradient: 'from-cyan-500 to-cyan-600',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    image: '../../images/conectared.jpg',
     items: [
       'Projeto e instalação de redes',
       'Redes WiFi corporativas',
@@ -59,7 +59,7 @@ const informaticaServices = [
     gradient: 'from-red-600/20 to-red-800/20',
     border: 'border-red-500/30',
     bgGradient: 'from-red-500 to-red-600',
-    image: 'https://images.unsplash.com/photo-1563986768711-b3bda5a50b94?w=800&q=80',
+    image: '../../images/seguranca.jpg',
     items: [
       'Firewalls e sistemas de proteção',
       'Backup e recuperação de dados',
@@ -75,7 +75,7 @@ const informaticaServices = [
     gradient: 'from-green-600/20 to-green-800/20',
     border: 'border-green-500/30',
     bgGradient: 'from-green-500 to-green-600',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    image: '../../images/soporte-tecnico.jpg',
     items: [
       'Atendimento 24 horas, 7 dias por semana',
       'Resposta imediata a chamados',

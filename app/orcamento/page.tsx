@@ -244,11 +244,10 @@ export default function OrcamentoPage() {
                       className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-cyan-500 focus:outline-none transition"
                     >
                       <option value="">Selecione um intervalo</option>
-                      <option value="0-1000">Até R$ 1.000</option>
+                      <option value="0-100">Até R$ 100</option>
+                      <option value="100-500">R$ 100 - R$ 500</option>
+                      <option value="500-1000">R$ 500 - R$ 1.000</option>
                       <option value="1000-5000">R$ 1.000 - R$ 5.000</option>
-                      <option value="5000-10000">R$ 5.000 - R$ 10.000</option>
-                      <option value="10000-20000">R$ 10.000 - R$ 20.000</option>
-                      <option value="20000-mais">Acima de R$ 20.000</option>
                     </select>
                   </div>
                   <div>
@@ -259,6 +258,7 @@ export default function OrcamentoPage() {
                       type="date"
                       name="data"
                       value={formData.data}
+                      min={new Date(new Date().setDate(new Date().getDate() + 3)).toISOString().split('T')[0]}
                       onChange={handleChange}
                       className="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-cyan-500 focus:outline-none transition"
                     />

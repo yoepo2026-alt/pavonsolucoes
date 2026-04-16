@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DetailedServices from '../components/DetailedServices';
 import PricingPlans from '../components/PricingPlans';
+import { reverse } from 'dns';
 
 const domoticaServices = [
   {
@@ -13,7 +14,7 @@ const domoticaServices = [
     gradient: 'from-yellow-600/20 to-yellow-800/20',
     border: 'border-yellow-500/30',
     bgGradient: 'from-yellow-500 to-yellow-600',
-    image: 'https://images.unsplash.com/photo-1520694478069-00d192474357?w=800&q=80',
+    image: '../../images/iluminacion.png',
     items: [
       'Lâmpadas LED inteligentes',
       'Controle por aplicativo ou voz',
@@ -44,7 +45,7 @@ const domoticaServices = [
     gradient: 'from-red-600/20 to-red-800/20',
     border: 'border-red-500/30',
     bgGradient: 'from-red-500 to-red-600',
-    image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=80',
+    image: '../../images/segurancares.jpg',
     items: [
       'Câmeras de segurança 4K',
       'Fechaduras biométricas',
@@ -53,60 +54,44 @@ const domoticaServices = [
     imageOrder: 'order-1 md:order-2',
   },
   {
-    title: 'Home Theatre e Áudio',
-    description: 'Sistemas de áudio e vídeo premium integrados. Som surround de qualidade profissional e entretenimento sincronizado em toda a casa.',
-    icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
-    gradient: 'from-purple-600/20 to-purple-800/20',
-    border: 'border-purple-500/30',
-    bgGradient: 'from-purple-500 to-purple-600',
-    image: 'https://images.unsplash.com/photo-1545817154-dc8e5d3b9a3b?w=800&q=80',
-    items: [
-      'Áudio multiroom de alta qualidade',
-      'TV e projetor integrados',
-      'Controle centralizado',
-    ],
-    imageOrder: 'order-0',
-    reverse: true,
-  },
-  {
     title: 'Integração de Dispositivos',
     description: 'Compatibilidade com os principais padrões e plataformas de automação. Todos os seus dispositivos funcionando em harmonia através de um único hub inteligente.',
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     gradient: 'from-green-600/20 to-green-800/20',
     border: 'border-green-500/30',
     bgGradient: 'from-green-500 to-green-600',
-    image: 'https://images.unsplash.com/photo-1560077453-014dc285ef23?w=800&q=80',
+    image: '../../images/integracaodispo.jpg',
     items: [
       'Compatível com Alexa e Google Home',
       'Padrão Z-Wave e Zigbee',
       'Automação por cenários',
     ],
+    reverse: true,
     imageOrder: 'order-1 md:order-2',
   },
 ];
 
 const domoticaPricing = [
   {
-    name: 'Essencial',
+    name: 'Iluminação Inteligente Básica',
     subtitle: 'Perfeito para começar',
-    price: 'R$ 2.999',
+    price: 'A partir de R$ 350',
     features: [
       'Iluminação inteligente',
-      'Até 5 cômodos',
+      'Até 32 lampadas',
       'Hub central',
       'Instalação básica'
     ],
     buttonText: 'Solicitar Informações'
   },
   {
-    name: 'Completo',
-    subtitle: 'Solução completa',
-    price: 'R$ 7.999',
+    name: 'Segurança Residencial Completa',
+    subtitle: 'Cuide do que mais importa',
+    price: 'A partir de R$ 750',
     features: [
-      'Iluminação + Temperatura',
-      'Câmeras de segurança',
-      'Fechadura inteligente',
-      'Até 15 dispositivos',
+      '4 Câmeras de segurança',
+      'NVR versátil',
+      '500 GB de armazenamento local',
       'Instalação profissional'
     ],
     badge: 'RECOMENDADO',
@@ -114,14 +99,14 @@ const domoticaPricing = [
     isPrimary: true
   },
   {
-    name: 'Premium',
+    name: 'Segurança Residencial Completa',
     subtitle: 'Solução total',
-    price: 'R$ 14.999',
+    price: 'A partir de R$ 900',
     features: [
-      'Todos os serviços',
-      'Home Theatre integrado',
-      'Sistema completo',
-      'Dispositivos ilimitados',
+      'Central de alarmes avançada',
+      '2 Controles remotos',
+      '6 sensores de abertura',
+      '1 Bateria de backup',
       'Suporte 12 meses'
     ],
     buttonText: 'Fale com Especialista'

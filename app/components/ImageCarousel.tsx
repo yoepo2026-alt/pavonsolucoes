@@ -25,8 +25,8 @@ const defaultImages: CarouselImage[] = [
   },
   {
     src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&q=80',
-    alt: 'Serviços de Cloud Computing',
-    title: 'Serviços de Cloud Computing'
+    alt: 'Manutenção de Computadores',
+    title: 'Manutenção de Computadores'
   },
   {
     src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80',

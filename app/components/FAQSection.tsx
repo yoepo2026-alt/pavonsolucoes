@@ -8,7 +8,7 @@ export default function FAQSection() {
           {[
             {
               titulo: 'Quanto tempo leva para receber um orçamento?',
-              resposta: 'Nossa equipe analisa sua solicitação e entra em contato em até 24 horas com uma proposta inicial.'
+              resposta: 'Nossa equipe analisa sua solicitação e entra em contato em até 48 horas com uma proposta inicial.'
             },
             {
               titulo: 'O orçamento é realmente gratuito?',

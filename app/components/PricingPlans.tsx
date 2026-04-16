@@ -136,13 +136,13 @@ export default function PricingPlans({ title, plans, darkBG = false }: PricingPl
                   ))}
                 </ul>
 
-                <button className={`w-full py-3 rounded-lg font-semibold transition ${plan.isPrimary
+{/*                 <button className={`w-full py-3 rounded-lg font-semibold transition ${plan.isPrimary
                     ? 'bg-white text-cyan-600 hover:shadow-lg'
                     : 'border-2 border-cyan-500 text-cyan-400 dark:text-cyan-400 hover:bg-cyan-500/10 dark:hover:bg-cyan-500/10'
                   }`}>
                   {plan.buttonText}
                 </button>
-              </div>
+ */}              </div>
             ))}
           </div>
 
