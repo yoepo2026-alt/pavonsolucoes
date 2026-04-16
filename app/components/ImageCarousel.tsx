@@ -159,10 +159,10 @@ export default function ImageCarousel({
           </button>
 
           {/* Indicador de Swipe no Mobile */}
-          <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 bg-white/30 text-white px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+{/*           <div className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 bg-white/30 text-white px-3 py-1 rounded-full text-xs backdrop-blur-sm">
             ← Deslize →
           </div>
-
+ */}
           {/* Indicadores (Dots) */}
           <div className="flex justify-center gap-2 mt-6">
             {images.map((_, index) => (
@@ -186,7 +186,7 @@ export default function ImageCarousel({
         </div>
 
         {/* Auto-play Toggle */}
-        <div className="flex justify-center mt-6">
+ {/*        <div className="flex justify-center mt-6">
           <button
             onClick={() => setIsAutoPlay(!isAutoPlay)}
             className="px-6 py-2 bg-cyan-500/20 hover:bg-cyan-500/30 dark:bg-cyan-500/10 dark:hover:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 rounded-lg text-sm font-medium transition-colors border border-cyan-500/30 dark:border-cyan-500/20"
@@ -194,7 +194,8 @@ export default function ImageCarousel({
             {isAutoPlay ? '⏸ Pausar' : '▶ Reproduzir'}
           </button>
         </div>
-      </div>
+ */}    
+   </div>
     </section>
   );
 }
