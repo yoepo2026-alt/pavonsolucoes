@@ -54,6 +54,7 @@ export default function Footer() {
               <li><a href="/" className="hover:text-white transition">Início</a></li>
               <li><a href="/informatica" className="hover:text-white transition">Informática</a></li>
               <li><a href="/domotica" className="hover:text-white transition">Domótica</a></li>
+              <li><a href="https://perfil.pavonsolucoes.com.br" className="hover:text-white transition" target="_blank">Responsável Técnico</a></li>
             </ul>
           </div>
         </div>
