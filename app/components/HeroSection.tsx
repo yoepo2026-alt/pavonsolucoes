@@ -32,7 +32,7 @@ export default function HeroSection({
           <p className="text-lg sm:text-xl text-gray-300 dark:text-gray-300 max-w-3xl mx-auto mb-8 transition-colors">
             {description}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+{/*           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={onPrimaryClick}
               className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition transform hover:scale-105"
@@ -46,7 +46,7 @@ export default function HeroSection({
               {secondaryButtonText}
             </button>
           </div>
-        </div>
+ */}        </div>
       </div>
     </section>
   );

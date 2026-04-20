@@ -41,11 +41,12 @@ export default function Header({ showOnHome = false }: HeaderProps) {
               <a href="/informatica" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Informática</a>
               <a href="/domotica" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Domótica</a>
               <a href="/#contato" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Contato</a>
+              <a href="https://perfil.pavonsolucoes.com.br" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition" target="_blank">Responsável Técnico</a>
             </>
           )}
         </div>
         <div className="flex gap-4 items-center">
-          {mounted && (
+{/*           {mounted && (
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition"
@@ -54,7 +55,7 @@ export default function Header({ showOnHome = false }: HeaderProps) {
               {theme === 'dark' ? '☀️' : '🌙'}
             </button>
           )}
-          <a href="/orcamento" className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">
+ */}          <a href="/orcamento" className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition">
             Solicitar Orçamento
           </a>
         </div>
