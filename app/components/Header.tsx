@@ -32,6 +32,7 @@ export default function Header({ showOnHome = false }: HeaderProps) {
               <a href="/informatica" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Informática</a>
               <a href="/domotica" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Domótica</a>
               <a href="#contato" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Contato</a>
+              <a href="https://perfil.pavonsolucoes.com.br" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition" target="_blank">Responsável Técnico</a>
             </>
           ) : (
             <>
