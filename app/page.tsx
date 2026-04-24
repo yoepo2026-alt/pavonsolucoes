@@ -17,7 +17,7 @@ export default function Home() {
       {/* Hero Section Component */}
       <HeroSection 
         title="Soluções Inteligentes para"
-        subtitle="Seu Negócio e Casa"
+        subtitle="seu Negócio e Casa"
         description="Serviços profissionais de informática e automação residencial. Transforme sua casa em um ambiente inteligente e otimize a infraestrutura de TI do seu negócio."
         primaryButtonText="Começar Agora"
         secondaryButtonText="Saiba Mais"
