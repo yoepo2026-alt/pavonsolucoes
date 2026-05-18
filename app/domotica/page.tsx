@@ -78,7 +78,7 @@ const domoticaPricing = [
     price: 'R$ 350',
     features: [
       'Iluminação inteligente',
-      'Até 32 lampadas',
+      'Até 32 lâmpadas',
       'Hub central',
       'Instalação básica'
     ],
@@ -99,7 +99,7 @@ const domoticaPricing = [
     isPrimary: true
   },
   {
-    name: 'Segurança Residencial Completa',
+    name: 'Sistema de alarmes inteligente',
     subtitle: 'Solução total',
     price: 'R$ 900',
     features: [
