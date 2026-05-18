@@ -75,7 +75,7 @@ const domoticaPricing = [
   {
     name: 'Iluminação Inteligente Básica',
     subtitle: 'Perfeito para começar',
-    price: 'A partir de R$ 350',
+    price: 'R$ 350',
     features: [
       'Iluminação inteligente',
       'Até 32 lampadas',
@@ -87,7 +87,7 @@ const domoticaPricing = [
   {
     name: 'Segurança Residencial Completa',
     subtitle: 'Cuide do que mais importa',
-    price: 'A partir de R$ 750',
+    price: 'R$ 750',
     features: [
       '4 Câmeras de segurança',
       'NVR versátil',
@@ -101,7 +101,7 @@ const domoticaPricing = [
   {
     name: 'Segurança Residencial Completa',
     subtitle: 'Solução total',
-    price: 'A partir de R$ 900',
+    price: 'R$ 900',
     features: [
       'Central de alarmes avançada',
       '2 Controles remotos',

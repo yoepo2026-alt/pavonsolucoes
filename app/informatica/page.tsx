@@ -89,7 +89,7 @@ const informaticaPricing = [
   {
     name: 'Pacote Básico',
     subtitle: 'Ideal para PC lento leve',
-    price: 'R$100–150',
+    price: 'R$100',
     priceLabel: '',
     features: [
       'Limpeza do sistema e remoção de arquivos inúteis',
@@ -103,7 +103,7 @@ const informaticaPricing = [
   {
     name: 'Pacote Completo',
     subtitle: 'Mais vendido',
-    price: 'R$150–220',
+    price: 'R$150',
     priceLabel: '',
     features: [
       'Formatação e reinstalação do sistema operacional',
@@ -116,7 +116,7 @@ const informaticaPricing = [
   {
     name: 'Pacote Performance',
     subtitle: 'Mais velocidade e melhor desempenho',
-    price: 'R$200–350',
+    price: 'R$200',
     priceLabel: '',
     features: [
       'Tudo do completo',
@@ -128,7 +128,7 @@ const informaticaPricing = [
     {
     name: 'Pacote Proteção',
     subtitle: 'Proteção contra vírus e invasões',
-    price: 'R$120–180',
+    price: 'R$120',
     priceLabel: '',
      features: [
       'Instalação de antivírus',
